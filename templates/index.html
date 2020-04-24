@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>My Website!</title>
-    </head>
-    <body>
-        <a href="{{ url_for('more') }}">Click Here</a>
+{% extends "layout.html" %}
+{% block heading %}
+        Frist Page
+{% endblock %}
+
+{% block body %}
+<a href="{{ url_for('more') }}">Click Here</a>
         <h1>{{ headline }}</h1>
         {%if new_yaer %}
         <h2>Yes! Happy New Year.</h2>
@@ -19,5 +19,18 @@
             </li>
             {% endfor %}
         </ul>
-    </body>
-</html>
+
+        <ul>
+            {% for note in notes %}
+            <li>{{ note }}</li>
+            {% endfor %}
+        </ul>
+        <form action="{{ url_for('index') }}" method="post">
+           <input type="text" name="note" placeholder="Enter Note Here">
+           <button>Add Note</button>
+       </form>
+       <form action="{{ url_for('hello1') }}" method="post">
+           <input type="text" name="name" placeholder="Enter Your Name">
+           <button>Submit</button>
+       </form>
+{% endblock %}
