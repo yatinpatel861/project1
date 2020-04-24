@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Website!</title>
+    </head>
+    <body>
+        <a href="{{ url_for('more') }}">Click Here</a>
+        <h1>{{ headline }}</h1>
+        {%if new_yaer %}
+        <h2>Yes! Happy New Year.</h2>
+        {% else %}
+        <h2>No, Today is not Happy New Year.</h2>
+        {% endif %}
+        <h1>Names </h1>
+        <ul>
+            {% for name in names %}
+            <li>
+                {{ name }}
+            </li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
