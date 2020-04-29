@@ -5,3 +5,4 @@ bin/python
 bin/python3
 bin/wheel
 bin/wheel3
+pyvenv.cfg
